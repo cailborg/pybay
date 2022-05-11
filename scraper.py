@@ -1,6 +1,10 @@
 import requests
 import pandas as pd
+import json
 page = requests.get("https://www.ebay.com.au/sch/Music/11233/i.html?_from=R40&_fosrp=1&_nkw=son+lux+tomorrows+vinyl&_in_kw=1&_ex_kw=&_sacat=11233&_mPrRngCbx=1&_udlo=20&_udhi=100&_ftrt=901&_ftrv=1&_sabdlo=&_sabdhi=&_samilow=&_samihi=&_sadis=15&_stpos=2261&_fsradio2=%26LH_PrefLoc%3D1&_sargn=-1%26saslc%3D2&_salic=15&LH_SubLocation=1&_fss=1&_saslop=1&_sasl=&_fsradio=LH_SellerWithStore%3D1&_sop=15&_dmd=1&_ipg=60")
+
+with open("wantlist.json", 'r') as f:
+    want_list = json.load(f)
 
 from bs4 import BeautifulSoup
 soup = BeautifulSoup(page.content, 'html.parser')
@@ -39,3 +43,5 @@ print(totals)
 
 mylst = pd.DataFrame({'Product name: ':titles, 'Price: ':prices, 'Shipping: ':shippings, 'Total: ':totals, 'URL: ':urls})
 mylst.to_csv("output.csv")
+
+print(want_list)
