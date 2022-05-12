@@ -18,3 +18,4 @@ USERNAME=YOUR_USERNAME
 - Open `output.csv` to view your table
 
 ## Example output
+![Output](https://raw.githubusercontent.com/cailborg/pybay/main/output.png)
