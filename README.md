@@ -1,7 +1,7 @@
 # pybay
 Matches your Discogs wantlist against current ebay listings
 
-## Set Up
+## Setup
 - Install `pip3` dependencies: `discogs_client`, `python dot-env`, `requests`, `pandas`, `bs4`
 - Make sure your [wantlist](https://www.discogs.com/settings/privacy) is `public`
 - Create a Personal Access Token at [Discogs](https://www.discogs.com/settings/developers)
@@ -16,3 +16,5 @@ USERNAME=YOUR_USERNAME
 - Run `discogs.py` to save your wantlist to disk
 - Run `scraper.py` to search ebay for listings
 - Open `output.csv` to view your table
+
+## Example output
