@@ -29,20 +29,27 @@ for release in want_list:
     soup = BeautifulSoup(page.content, 'html.parser')
     results = soup.find(id="ResultSetItems")
     # print(results)
-    for items in results.find_all(class_="sresult", limit=10):
-        title = items.find(class_="lvtitle").get_text(strip=True)
-        # print(title)
-        price = find_numbers(items.find(
-            class_="lvprice").findChild().get_text(strip=True), ints=False)
-        # print(price)
-        shipping = find_numbers(items.find(
-            class_="lvshipping").get_text(strip=True), ints=False)
-        # print(shipping)
-        url = items.find("a", href=True)
-        titles.append(title)
-        prices.append(*price)
-        shippings.append(*shipping)
-        urls.append(url['href'])
+    try:
+        for items in results.find_all(class_="sresult", limit=10): 
+            title = items.find(class_="lvtitle").get_text(strip=True)
+            # print(title)
+            price = find_numbers(items.find(
+                class_="lvprice").findChild().get_text(strip=True), ints=False)
+            # print(price)
+            shipping = find_numbers(items.find(
+                class_="lvshipping").get_text(strip=True), ints=False)
+            # print(shipping)
+            url = items.find("a", href=True)
+            titles.append(title)
+            prices.append(*price)
+            shippings.append(*shipping)
+            urls.append(url['href'])
+    except:
+        titles.append("N/A")
+        prices.append(0)
+        shippings.append(0)
+        urls.append("N/A")
+
 
 totals = [x+y for x, y in zip(prices, shippings)]
 print(prices)
