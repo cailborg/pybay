@@ -25,7 +25,7 @@ shippings = []
 urls = []
 
 for release in want_list:
-    page = requests.get(f"https://www.ebay.com.au/sch/Music/11233/i.html?_from=R40&_fosrp=1&_nkw={release}+vinyl&_in_kw=1&_ex_kw=&_sacat=11233&_mPrRngCbx=1&_udlo=20&_udhi=100&_ftrt=901&_ftrv=1&_sabdlo=&_sabdhi=&_samilow=&_samihi=&_sadis=15&_stpos=2261&_fsradio2=%26LH_PrefLoc%3D1&_sargn=-1%26saslc%3D2&_salic=15&LH_SubLocation=1&_fss=1&_saslop=1&_sasl=&_fsradio=LH_SellerWithStore%3D1&_sop=15&_dmd=1&_ipg=60")
+    page = requests.get(f"https://www.ebay.com.au/sch/Music/11233/i.html?_from=R40&_fosrp=1&_nkw={release}+vinyl&_in_kw=1&_ex_kw=cd&_sacat=11233&_mPrRngCbx=1&_udlo=20&_udhi=100&_ftrt=901&_ftrv=1&_sabdlo=&_sabdhi=&_samilow=&_samihi=&_sadis=15&_stpos=2261&_fsradio2=%26LH_PrefLoc%3D1&_sargn=-1%26saslc%3D2&_salic=15&LH_SubLocation=1&_fss=1&_saslop=1&_sasl=&_fsradio=LH_SellerWithStore%3D1&_sop=15&_dmd=1&_ipg=60")
     soup = BeautifulSoup(page.content, 'html.parser')
     results = soup.find(id="ResultSetItems")
     # print(results)
