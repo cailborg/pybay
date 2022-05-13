@@ -8,9 +8,10 @@ load_dotenv(find_dotenv())
 
 TOKEN = os.environ['TOKEN']
 USERNAME = os.environ['USERNAME']
+DISCOGS_PAGE_NUMBER = 1
 
 import requests
-response = requests.get(f"https://api.discogs.com/users/{USERNAME}/wants").json()
+response = requests.get(f"https://api.discogs.com/users/{USERNAME}/wants?page={DISCOGS_PAGE_NUMBER}&per_page=50").json()
 
 new_dict = {}
 for key, value in response.items():
