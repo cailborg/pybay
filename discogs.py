@@ -6,7 +6,7 @@ import json
 
 load_dotenv(find_dotenv())
 
-TOKEN = os.environ['TOKEN']
+# TOKEN = os.environ['TOKEN']
 USERNAME = os.environ['USERNAME']
 DISCOGS_PAGE_NUMBER = 1
 

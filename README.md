@@ -8,7 +8,6 @@ Matches your Discogs wantlist against current ebay listings
 - Create a `.env` file and use the following format
 
 ```
-TOKEN=YOUR_TOKEN_HERE
 USERNAME=YOUR_USERNAME
 ```
 
