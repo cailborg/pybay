@@ -30,7 +30,7 @@ for release in want_list:
     results = soup.find(id="ResultSetItems")
     # print(results)
     try:
-        for items in results.find_all(class_="sresult", limit=5): 
+        for items in results.find_all(class_="sresult", limit=10): 
             title = items.find(class_="lvtitle").get_text(strip=True)
             # print(title)
             price = find_numbers(items.find(
