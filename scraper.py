@@ -34,7 +34,7 @@ for release in want_list:
             title = items.find(class_="lvtitle").get_text(strip=True)
             # print(title)
             price = find_numbers(items.find(
-                class_="lvprice").find(class_="bold", recursive=False).next_element.get_text(strip=True), ints=False)
+                class_="lvprice").b.next_sibling.get_text(strip=True), ints=False)
             # print(price)
             shipping = find_numbers(items.find(
                 class_="lvshipping").get_text(strip=True), ints=False)
@@ -52,8 +52,9 @@ for release in want_list:
 
 
 totals = [x+y for x, y in zip(prices, shippings)]
-print(totals)
-print(titles)
+# print(totals)
+# print(prices)
+# print(titles)
 print(len(totals))
 print(len(titles))
 
